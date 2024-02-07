@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Valentin
+apellido:Corallo
 ---
 TP: ES_Facturaciones
 ---
@@ -52,13 +52,26 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
+        importe_1 = float(self.txt_importe_1.get())
+        importe_2 = float(self.txt_importe_2.get())
+        importe_3 = float(self.txt_importe_3.get())
+        importe_final = (importe_1 + importe_2 + importe_3)
+        alert("El precio total es:", (importe_final))
 
     def btn_promedio_on_click(self):
-        pass
+        promedio_1 = float(self.txt_importe_1.get())
+        promedio_2 = float(self.txt_importe_2.get())
+        promedio_3 = float(self.txt_importe_3.get())
+        prom_final = float(promedio_1 + promedio_2 + promedio_3) / 3
+        alert("El promedio total es:", (prom_final))
 
     def btn_total_iva_on_click(self):
-        pass      
+        iva_1 = float(self.txt_importe_1.get())
+        iva_2 = float(self.txt_importe_2.get())
+        iva_3 = float(self.txt_importe_3.get())  
+        iva_final = (iva_1 + iva_2 + iva_3) 
+        final_final = iva_final * 21 / 100
+        alert("El precio final con iva es:", iva_final + final_final)
     
 if __name__ == "__main__":
     app = App()
