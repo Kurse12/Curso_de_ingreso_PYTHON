@@ -27,7 +27,7 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        alert("Mensaje", random.randint(1, 10) )
         
 
 if __name__ == "__main__":
