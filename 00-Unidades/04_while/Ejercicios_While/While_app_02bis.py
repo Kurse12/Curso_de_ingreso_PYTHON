@@ -29,7 +29,23 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+        i = 0
+        #var_i = 
+        while i < 10:
+
+            i+=1
+
+            while i % 2 == 0:
+
+               print()
+
+
+
+
+
+        
+           
+
     
     
 if __name__ == "__main__":
