@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre:Valentin
+apellido:Corallo
 ---
 Ejercicio: while_02bis
 ---
@@ -30,14 +30,18 @@ class App(customtkinter.CTk):
     
     def btn_mostrar_iteracion_on_click(self):
         i = 0
-        #var_i = 
-        while i < 10:
+        acumulador = 0
+        
 
-            i+=1
+        while i < 11:
 
-            while i % 2 == 0:
+            if i % 2 == 0:
+               acumulador = acumulador + i
 
-               print()
+            i += 1
+            
+        alert("Mensaje", f"La suma de los pares es: {acumulador}")
+        
 
 
 

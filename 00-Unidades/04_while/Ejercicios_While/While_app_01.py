@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre:Valentin
+apellido:Corallo
 ---
 Ejercicio: while_01
 ---
@@ -34,6 +34,7 @@ class App(customtkinter.CTk):
             print(i +1)
 
             i += 1    
+            alert("Mensaje", f"{i}")
     
 if __name__ == "__main__":
     app = App()

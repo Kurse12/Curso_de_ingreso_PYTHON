@@ -32,7 +32,13 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        #repetir = int(self.txt_repetir.get())
+        #for i in range(1, repetir +1):
+        #    alert("Mensaje", f"numeros: {i}")
+        repetir = int(self.txt_repetir.get())
+
+        for i in range(1, repetir+1):
+            alert(title= "Números", message= i)
 
         
     

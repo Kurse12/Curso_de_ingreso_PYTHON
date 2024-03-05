@@ -82,8 +82,8 @@ class App(customtkinter.CTk):
         alert("Mensaje", f"el precio final es {total}")
 
     
-        
-    
+    #     
+    # 
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

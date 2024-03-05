@@ -54,7 +54,7 @@ class App(customtkinter.CTk):
                      mensaje = "Se vienen las vacaciones!!"
             case "Diciembre":
                      mensaje = " Felices Fiestas!!!"
-
+                     
         alert("Mensaje", f"{mensaje}")
     
     

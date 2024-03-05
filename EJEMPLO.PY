@@ -26,38 +26,50 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
+
         flag_inic = True
-        min = 0
-        max = 0
         seguir = True
 
+        num_min = 0
+        num_max = 0
+
         while True:
-            numero = prompt("Numero", "Ingrese un numero")
+            numero = input("ingrese un numero")
             numero = int(numero)
+            
 
-            if numero == None:
-                break
+            
 
-            if numero < min or flag_inic == True:
-                min = numero
                 
+                
+                
+            #cambiar candidato mas votado
+            if numero > num_max or flag_inic == True:
+                num_max = numero
+               
 
-            if numero > max or flag_inic == True:
-                max = numero
+                #candidado menos votado
+            if numero < num_min or flag_inic == True:
+                num_min = numero
                 flag_inic = False
+                    
 
-            print(f"el numero maximo es: {max}")
-            print(f"El numero minimo es: {min} ")
+            print(num_max)
+            print(num_min)
+
 
             seguir = question("Seguir?", "Desea ingresar otro numero?")
-            
+
             if seguir == False:
                 break
-        print(min)
-        print(max)
+
+        
 
 
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+                
+
+            

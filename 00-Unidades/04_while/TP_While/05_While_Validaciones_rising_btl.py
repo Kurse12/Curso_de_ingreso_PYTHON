@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Valentin
+apellido:Corallo
 ---
 TP: While_validaciones_rising_btl
 ---
@@ -55,7 +55,79 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        apellido = None
+        edad = 0
+        numero_legajo = 1000
+        i = 0
+
+        while i < 4:
+            if i == 0:
+                ingreso_apellido = prompt("Mensaje", "Ingresa el apellido")
+
+                apellido = ingreso_apellido
+
+                if ingreso_apellido == None or ingreso_apellido == "":
+                    alert("Mensaje", "INGRESA ALGO")
+                    continue
+                            
+            i+=1
+
+            if i == 1:
+                ingreso_edad = prompt("Mensaje", "Ingrese su edad")
+                
+                edad = ingreso_edad
+
+                if ingreso_edad == None or ingreso_edad == "":
+                    alert("Mensaje", "INGRESA ALGO")
+                    continue
+            i+=1
+
+            if i == 2:
+                ingreso_estado = prompt("Mensaje", "Ingrese su estado civil")
+
+                estado = ingreso_estado
+
+                if estado == "soltero" or estado == "Soltero" or estado == "soltera" or estado == "Soltera":
+                    estado = self.combobox_tipo.set("Soltero/a")
+                elif estado == "casado" or estado == "Casado" or estado == "casada" or estado == "Casada":
+                    estado = self.combobox_tipo.set("Casado/a")
+                elif estado == "divorciado" or estado == "Divorciado" or estado == "divorciada" or estado == "Divorciada":
+                    estado = self.combobox_tipo.set("Divorciado/a")
+                elif estado == "viudo" or estado == "Viudo" or estado == "Viuda" or estado == "viuda":
+                    estado = self.combobox_tipo.set("Viudo/a")
+                
+                if ingreso_apellido == None:
+                    continue
+            i += 1
+
+            if i == 3:
+                legajo = 0
+                ingreso_legajo = prompt("Mensaje", "Ingese su legajo")
+                legajo = int(ingreso_legajo)
+
+                if legajo <= 1000 or legajo >= 9999:
+                    prompt("Mensaje", "El legajo es un numero de 4 cifras...")
+                
+                if ingreso_legajo == None:
+                    
+                    break
+
+            i += 1
+
+
+
+        self.txt_apellido.delete(0, "end")
+        self.txt_apellido.insert(0, apellido)
+
+        self.txt_edad.delete(0, "end")
+        self.txt_edad.insert(0, edad)
+
+        self.txt_legajo.delete(0, "end")
+        self.txt_legajo.insert(0, legajo)
+
+        
+
+
 
 
 if __name__ == "__main__":
